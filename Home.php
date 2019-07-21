@@ -23,7 +23,7 @@ include 'Connect.php';
         while ($a = mysql_fetch_array($query)) {
          ?>
         <tr>
-          <td><?php echo $a['ST_ID']; ?></td>
+          <td><?php echo $a['ST_Number']; ?></td>
           <td><?php echo $a['ST_Name']; ?></td>
           <td><?php echo $a['ST_Sub']; ?></td>
           <td><?php echo $a['ST_Address']; ?></td>

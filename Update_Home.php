@@ -11,7 +11,9 @@ if ($_POST['Edit_Home']) {
         ST_Address = "'.$_POST['ST_Address'].'",
         ST_Email = "'.$_POST['ST_Email'].'",
         ST_Phone = "'.$_POST['ST_Phone'].'",
-        ST_Status = "'.$_POST['ST_Status'].'"
+        ST_Status = "'.$_POST['ST_Status'].'",
+        ST_Grede = "'.$_POST['ST_Grede'].'",
+        ST_Number = "'.$_POST['ST_Number'].'"
 
         WHERE
 

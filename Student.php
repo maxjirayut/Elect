@@ -9,6 +9,53 @@ include 'Connect.php';?>
     </a>
   </div>
 </div>
+<div class="text-center">
+    <div>
+      <form  action="Student.php" method="post">
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <div class="row">
+              <label>สาขา </label>
+            <select name="ST_Sub"  class="form-control">
+              <option value=""></option>
+              <option value="สาขาวิชาเทคโนโลยีสารสนเทศ">สาขาวิชาเทคโนโลยีสารสนเทศ</option>
+              <option value="สาขาวิชาการจัดการเทคโนโลยี">สาขาวิชาการจัดการเทคโนโลยี</option>
+              <option value="สาขาวิชาการจัดการเทคโนโลยีสารสนเทศ">สาขาวิชาการจัดการเทคโนโลยีสารสนเทศ</option>
+              <option value="สาขาวิชาเทคโนโลยีมัลติมีเดียและเเอนิเมชั่น">สาขาวิชาเทคโนโลยีมัลติมีเดียและเเอนิเมชั่น </option>
+              <option value="สาขาวิชาเทคโนโลยีคอมพิวเตอร์และการสื่อสาร">สาขาวิชาเทคโนโลยีคอมพิวเตอร์และการสื่อสาร </option>
+              <option value="สาขาวิชาภูมิสารสนเทศ">สาขาวิชาภูมิสารสนเทศ </option>
+            </select>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="row">
+          <label>ปี</label>
+          <select name="Year"  class="form-control">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          </div>
+          </div>
+          <div class="col-1">
+          <div class="row">
+            <label>ห้อง</label>
+            <select name="Room"  class="form-control">
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          </div>
+        </div>
+        <br>
+        <input class="btn btn-light" type="submit" value="ค้าหา">
+      </form>
+    </div>
+</div>
  <table class="table"  id="dataTable">
      <thead class="thead-light">
         <tr>
@@ -20,7 +67,31 @@ include 'Connect.php';?>
       </thead>
       <tbody>
         <?php
-        $sql = "SELECT * FROM tb_number  ";
+        error_reporting(~E_NOTICE);
+          $Sub = $_POST["ST_Sub"] ;
+          $Year = $_POST["Year"] ;
+          $Room = $_POST["Room"] ;
+
+    if ($Sub == null && $Year == NULL && $Room == null) {
+      $row = 1;
+      $sql = "SELECT * FROM tb_number ";
+    } elseif ($Year == null && $Sub != null && $Room == null) {
+      $row = 1;
+      $sql = "SELECT * FROM tb_number N INNER JOIN Year Y ON N.Year = Y.Year WHERE N.Number_Sub = '$Sub' ";
+    } else if($Year != null && $Sub != null && $Room == null) {
+      $row = 1;
+      $sql = "SELECT * FROM tb_number N INNER JOIN Year Y ON N.Year = Y.Year WHERE N.Number_Sub = '$Sub' AND Y.YearCode = $Year ";
+    }elseif ($Year != null && $Sub == null && $Room == null) {
+      $row = 1;
+      $sql = "SELECT * FROM tb_number N INNER JOIN Year Y ON N.Year = Y.Year WHERE  Y.YearCode = $Year ";
+    }elseif ($Year != null && $Sub != null && $Room != null) {
+      $row = 1;
+      $sql = "SELECT * FROM tb_number N INNER JOIN Year Y ON N.Year = Y.Year WHERE N.Number_Sub = '$Sub' AND Y.YearCode = $Year AND N.room = $Room ";
+    }elseif ($Year == null && $Sub == null && $Room != null) {
+      $row = 1;
+      echo "<script>alert('กรุณากรอกข้อมูลให้ครบ')</script>";
+      $sql = "SELECT * FROM tb_number  ";
+    }
         $query = mysql_query($sql);
         while ($a = mysql_fetch_array($query)) {
          ?>

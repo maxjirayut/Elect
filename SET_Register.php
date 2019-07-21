@@ -55,16 +55,16 @@ if ($objResult == ''||$objResult == NULL) {
   //ตัวขื่อกับนามสกุลภาพออกจากกัน
   $type = strrchr($_FILES['Img_Profile']['name'],".");
   //ตั้งชื่อไฟล์ใหม่เป็น สุ่มตัวเลข+วันที่
-  $Newname_ProFile =$numrand.$date1.$type;
+  $Newname_Grade =$numrand.$date1.$type;
 
-  $path_copy=$path.$Newname_ProFile;
-  $path_link="img/".$Newname_ProFile;
+  $path_copy=$path.$Newname_Grade;
+  $path_link="img/".$Newname_Grade;
   //คัดลอกไฟล์ไปยังโฟลเดอร์
   move_uploaded_file($_FILES['Img_Profile']['tmp_name'],$path_copy);
 
   }
 
-   $SQL = 'insert into tb_student(ST_Code,ST_Name,ST_Sub,ST_Address,ST_Email,ST_Phone,ST_Grede,ST_Status,ST_Img_Grade,ST_Profile,ST_Policy)
+   $SQL = 'insert into tb_student(ST_Code,ST_Name,ST_Sub,ST_Address,ST_Email,ST_Grede,ST_Phone,ST_Status,ST_Img_Grade,ST_Profile,ST_Policy)
   value (
     "'.$_POST["Number_Code"].'",
     "'.$_POST["ST_Name"].'",
@@ -74,7 +74,7 @@ if ($objResult == ''||$objResult == NULL) {
     "'.$_POST["ST_Grede"].'",
     "'.$_POST["ST_Phone"].'",
     "รอการตรวจสอบ",
-    "'.$Newname_Profile.'",
+    "'.$Newname_Grade.'",
     "'.$Newname_ProFile.'",
     "'.$_POST["ST_Policy"].'"
     )';

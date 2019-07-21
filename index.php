@@ -10,7 +10,7 @@ include 'Menu/Menuindex.php';?>
    <div class="row">
      <div class="col-sm">
        <div class="text-center">
-         <a href="Register.php" style="width: 100%;">
+         <a href="Agreement.php" style="width: 100%;">
            <button style="border-radius: 15px; width: 70%;" type="button" class="btn btn-outline-primary">
              ลงสมัครนายยกสโมสรนักศึกษา
            </button>

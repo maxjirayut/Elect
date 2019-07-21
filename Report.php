@@ -17,7 +17,7 @@ include 'Menu/MenuReport.php';?>
           while ($data = mysql_fetch_array($query)) {
            ?>
           <tr>
-            <td><?php echo $data['ST_ID']; ?></td>
+            <td><?php echo $data['ST_Number']; ?></td>
             <td><?php echo $data['ST_Name']; ?></td>
             <td><?php echo $data['ST_Sub']; ?></td>
             <td><?php echo $data['ST_Score']; ?></td>

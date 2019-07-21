@@ -9,19 +9,24 @@ include 'Menu/MenuHome.php';?>
    ?>
 <div class="container">
   <div class="row justify-content-md-center" >
-      <img style="max-width:250px;" src="img/<?php echo $data['ST_Img_Grade'];?>">
+      <img style="max-width:250px;" src="img/<?php echo $data['	ST_Profile'];?>">
   </div>
+
+  <div class="form-group">
   <br>
   <div class="text-center">
     <h2>จัดการข้อมูลผู้สมัครนายกสโมสร</h2>
   </div>
   <form action="Update_Home.php?ST_ID=<?php echo $data['ST_ID'];?>" method="post">
-    <div class="form-group">
     <label>สถาณะ</label>
     <select name="ST_Status"  class="form-control">
       <option value="อนุมัติ">อนุมัติ</option>
       <option value="ไม่อนุมัติ">ไม่อนุมัติ</option>
     </select>
+    </div>
+	  <div class="form-group">
+      <label>กำหนดเบอร์</label>
+      <input type="number" class="form-control" required  value="<?php echo $data['ST_Number']; ?>" name="ST_Number">
     </div>
     <div class="form-group">
       <label >ชื่อ</label>
@@ -51,9 +56,22 @@ include 'Menu/MenuHome.php';?>
       <label>เบอร์โทรศัพท์</label>
       <input type="number" class="form-control" required  value="<?php echo $data['ST_Phone'];?>" name="ST_Phone">
     </div>
+    <br>
+    <div class="text-center">
+      <h2>เอกสารยืนยันเกรด</h2>
+    </div>
+    <div class="row justify-content-md-center" >
+       <img style="max-width:200px;" src="img/<?php echo $data['ST_Img_Grade'];?>">
+   </div>
+   <div class="form-group">
+     <label>เกรด</label>
+     <input type="number" class="form-control" required  value="<?php echo $data['ST_Grede'];?>" name="ST_Grede">
+   </div>
     <div class="text-center">
       <input type="submit" onclick="return confirm('คุณต้องการแก่ไขข้อมูลหรีอไม่')" class="btn btn-primary" name="Edit_Home" value="แก่ไขข้อมูลผู้สมัคร">
     </div>
   </form>
+<br><br>
 </div>
+
 <?php include 'Footer.php'; ?>

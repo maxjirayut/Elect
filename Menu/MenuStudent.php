@@ -11,7 +11,7 @@
         <a class="nav-link" href="Permissions.php">กำหนดสิทธิ์ <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href="Report.php">สรุปรายการ <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Report.php">สรุปรายการ<span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <form action="Login.php" class="form-inline my-2 my-lg-0">

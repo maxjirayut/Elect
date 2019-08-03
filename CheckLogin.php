@@ -9,7 +9,7 @@ include 'Connect.php';
 	{
 			// echo "Username and Password Incorrect!";
 			echo "<script>alert('Username and Password ไม่ถูกต้อง')</script>";
-			// echo "<script>window.location='login.php'</script>";
+		  echo "<script>window.location='login.php'</script>";
 	}
 	else
 	{

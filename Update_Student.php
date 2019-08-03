@@ -7,9 +7,11 @@ if (!isset($_POST['Edit'])) {
 if ($_POST['Edit']) {
  $sql_up = 'UPDATE tb_number set
         Number_Code = "'.$_POST['Number_Code'].'",
+        Number_Code = "'.$_POST['Number_User'].'",
         Number_Name = "'.$_POST['Number_Name'].'",
         Number_Phone = "'.$_POST['Number_Phone'].'",
-        Grade = "'.$_POST['Grade'].'"
+        Year = "'.$_POST['Year'].'",
+        room = "'.$_POST['room'].'"
         WHERE
         Number_ID = "'.$_GET['Number_ID'].'"
    ';

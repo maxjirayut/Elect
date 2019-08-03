@@ -60,8 +60,11 @@ include 'Connect.php';?>
      <thead class="thead-light">
         <tr>
           <th>รหัสนักศึกษา</th>
+          <th>บัตรประจำตัวประชาชน</th>
           <th>ชื่อ</th>
           <th>เบอร์โทร</th>
+          <th>ปีการศึกษา</th>
+          <th>ห้อง</th>
           <th>แก่ไข/ลบ</th>
         </tr>
       </thead>
@@ -97,8 +100,11 @@ include 'Connect.php';?>
          ?>
         <tr>
           <td><?php echo $a['Number_Code']; ?></td>
+          <td><?php echo $a['Number_User']; ?></td>
           <td><?php echo $a['Number_Name']; ?></td>
           <td><?php echo $a['Number_Phone']; ?></td>
+          <td><?php echo $a['Year']; ?></td>
+          <td><?php echo $a['room']; ?></td>
           <td width="15%" >
             <div class="text-center">
               <a href="FromStudent.php?Number_ID=<?php echo $a['Number_ID']; ?>">

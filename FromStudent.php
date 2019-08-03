@@ -17,6 +17,10 @@ include 'Menu/MenuStudent.php'; ?>
       <input type="number" class="form-control" required  value="<?php echo $data['Number_Code']?>" name="Number_Code">
     </div>
     <div class="form-group">
+      <label>หมายเลขบัติบัตรประจำตัวประชาชน</label>
+      <input type="number" class="form-control" required  value="<?php echo $data['Number_User']?>" name="Number_User">
+    </div>
+    <div class="form-group">
       <label>ชื่อ</label>
       <input type="text" class="form-control"  value="<?php echo $data['Number_Name']?>" name="Number_Name">
     </div>
@@ -25,8 +29,16 @@ include 'Menu/MenuStudent.php'; ?>
       <input type="number" class="form-control"  value="<?php echo $data['Number_Phone']?>" name="Number_Phone">
     </div>
     <div class="form-group">
-      <label>เกรด</label>
-      <input type="text" class="form-control"   value="<?php echo $data['Grade']?>" name="Grade">
+      <div class="row">
+        <div class="col">
+          <label>ปี</label>
+          <input type="number" class="form-control"   value="<?php echo $data['Year']?>" name="Year">
+        </div>
+        <div class="col">
+          <label>ห้อง</label>
+          <input type="number" class="form-control"   value="<?php echo $data['room']?>" name="room">
+        </div>
+      </div>
     </div>
     <div class="text-center">
       <input type="submit" class="btn btn-primary" name="Edit"  value="แก่ไข">

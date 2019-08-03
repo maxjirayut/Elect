@@ -8,12 +8,14 @@ if ($objResult !='' || $objResult != NULL) {
   echo "<script>alert('มีรหัสนักศึกษาแล้วไม่สามารถกรอกซ่ำได้')</script>";
   echo "<script>window.location='FromInserNumber.php'</script>";
 }else {
-  $SQL = 'insert into tb_number(Number_Code,Number_Name,Number_Phone,Grade)
+  $SQL = 'insert into tb_number(Number_Code,Number_User,Number_Name,Number_Phone,Year,room)
     value (
       "'.$_POST["Number_Code"].'",
+      "'.$_POST["Number_User"].'",
       "'.$_POST["Number_Name"].'",
       "'.$_POST["Number_Phone"].'",
-      "'.$_POST["Grade"].'"
+      "'.$_POST["Year"].'",
+      "'.$_POST["room"].'"
       )';
   $SQL = mysql_query($SQL);
 
